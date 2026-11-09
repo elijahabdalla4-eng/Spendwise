@@ -1,58 +1,80 @@
 # SpendWise - Interactive Budget Tracker
 
-SpendWise is a dynamic, browser-based personal finance tracker designed to help users record daily spending, monitor remaining funds against a set budget, and receive real-time financial feedback.
+## Project Description
 
----
+SpendWise is a browser-based personal finance tracker designed to help users manage their daily expenses and monitor their monthly budget.
 
-## 🌟 Improvements Made This Week
-This week, SpendWise transitioned from a static HTML template into a functional, interactive Web Application:
-* **Dynamic Record Logging:** Users can add and delete expense records dynamically.
-* **Live Calculations:** The application automatically computes total spending and updates remaining budget metrics.
-* **Adaptive Alerts:** Displays real-time status banners based on spending thresholds.
+The application allows users to add and delete expenses, calculate total spending, view their remaining budget, and receive budget alerts based on their spending habits.
 
----
+## Technologies Used
 
-## 💡 Technical Implementation Details
+- HTML5 - Website structure
+- CSS3 - Styling and responsive design
+- JavaScript - Expense management and calculations
+- Git - Version control
+- GitHub - Source code hosting
+- Netlify - Website hosting and deployment
 
-### 1. Decision Making (Conditionals)
-Conditionals (`if`, `else if`, `else`) are applied across two main areas:
-* **Validation Check:** Ensures input inputs are non-empty and numbers are strictly positive before adding records to memory.
-* **Budget Status Evaluation:** Computes total expenses against the threshold ($1,000) and displays:
-  * `info`: No expenses logged yet.
-  * `success`: Expenses are within safe operational limits.
-  * `warning`: Expenses exceed 80% of total budget limit.
-  * `danger`: Budget has been exceeded.
+## GitHub Repository Information
 
-### 2. Storing Data (Arrays)
-* All expenses are held in a global JavaScript array named `expenses`.
-* Every entry added via the form is formatted as an object `{ id, name, amount, category }` and appended using `expenses.push()`.
-* Removal of items uses the `Array.prototype.filter()` method to remove records matching a given ID.
+**Repository Name:** SpendWise
 
-### 3. Processing Data (Loops)
-* **Summation Loop:** A standard `for` loop iterates through the `expenses` array to calculate aggregate totals.
-* **Rendering Loop:** A `for` loop cycles through stored entries to build table elements dynamic on the page.
+**GitHub Repository URL:** [https://github.com/elijahabdalla4-eng/Spendwise]
 
-### 4. DOM Manipulation
-* **Content Updates:** Nodes such as total balance, remaining limit, and alert text are updated using `.textContent` and `.innerHTML`.
-* **Element Creation:** Generates table row elements (`<tr>`) dynamically and inserts them into the document tree using `.appendChild()`.
+## Live Netlify Website
 
-### 5. Event Handling
-* **Form Submission (`submit`):** Listens on `#expense-form` to intercept submissions, invoking `e.preventDefault()` to stop page reloads.
-* **Record Removal (`click`):** Action buttons attached directly to generated rows execute deletion logic via dynamic inline `onclick` handlers.
+**Live Website URL:** [https://spendwisebudgetracket.netlify.app/]
 
----
+## Deployment Process Summary
 
-## 🛠️ Challenges Encountered & Resolutions
+1. Reviewed and organized the SpendWise project files.
+2. Created a public GitHub repository named SpendWise.
+3. Initialized Git in the project folder.
+4. Added and committed the project files.
+5. Pushed the project to GitHub.
+6. Connected the GitHub repository to Netlify.
+7. Configured Netlify to publish the static website.
+8. Changed the default Netlify site name to a meaningful project name.
+9. Tested the deployed website.
+10. Made a visible change to the application and pushed it to GitHub.
+11. Verified that Netlify automatically deployed the latest changes.
 
-1. **Issue:** Submitting the form triggered a browser page refresh, losing stored data instantly.
-   * **Resolution:** Included `event.preventDefault()` at the beginning of the form submit handler.
-2. **Issue:** Numeric inputs from form elements were treated as string primitives (`"50"` + `"20"` resulted in `"5020"`).
-   * **Resolution:** Wrapped values inside `parseFloat()` prior to performing calculations.
+## Challenges Encountered During Deployment
 
----
+### 1. Organizing Project Files
 
-## 🚀 How to Run locally
+Ensuring that the HTML, CSS, and JavaScript files were correctly organized and referenced.
 
-1. Download or clone this repository.
-2. Open `index.html` inside any web browser.
-3. Fill out the expense details in the form and click **Add Expense**.
+**Solution:** Organized the project files in one directory and verified the file paths.
+
+### 2. Configuring Netlify
+
+Understanding the correct deployment settings for a static website.
+
+**Solution:** Used the GitHub repository as the deployment source and configured the publish directory.
+
+### 3. Automatic Deployment
+
+Verifying that changes pushed to GitHub were reflected on the live website.
+
+**Solution:** Modified the application, committed the changes, pushed them to GitHub, and checked the latest Netlify deployment.
+
+## Lessons Learned
+
+- How to create and manage a public GitHub repository.
+- How to deploy a static website using Netlify.
+- How to connect GitHub to Netlify for continuous deployment.
+- How to test a live website after deployment.
+- The importance of correct file names and file paths.
+- How to verify that automatic deployments are working.
+
+## How to Run Locally
+
+1. Clone the GitHub repository.
+2. Open the project folder.
+3. Open `index.html` in a web browser.
+4. Add expenses and monitor the budget.
+
+## Conclusion
+
+SpendWise demonstrates the process of developing, hosting, and deploying a web application using GitHub and Netlify. The project provides an interactive budgeting tool while demonstrating practical web hosting and continuous deployment skills.
